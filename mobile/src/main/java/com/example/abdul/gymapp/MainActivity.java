@@ -15,14 +15,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-//    public void text_msg(View view){
-//        TextView tv= (TextView) findViewById(R.id.forgottenpassword);
-//
-//        //alter text of textview widget
-//        tv.setText("This text view is clicked");
-//
-//        //assign the textview forecolor
-//        tv.setTextColor(Color.GREEN);
-//    }
+    public void text_msg(View view){
+        TextView tv= (TextView) findViewById(R.id.forgottenpassword);
+
+        //alter text of textview widget
+        tv.setText("This text view is clicked");
+
+        //assign the textview forecolor
+        tv.setTextColor(Color.GREEN);
+    }
 
 }

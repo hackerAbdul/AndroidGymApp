@@ -20,15 +20,27 @@ public class LoginPage extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openMainActivity();
+                openPre_homepage();
+            }
+        });
+
+        button = findViewById(R.id.register);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openRegisterPage();
             }
         });
 
     }
 
-    public void openMainActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
+    public void openPre_homepage(){
+        Intent intent = new Intent(this, Pre_homepage.class);
         startActivity(intent);
     }
 
+    public void openRegisterPage(){
+        Intent intent = new Intent(this, RegisterPage.class);
+        startActivity(intent);
+    }
 }
