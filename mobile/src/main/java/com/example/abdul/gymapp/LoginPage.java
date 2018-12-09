@@ -5,11 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class LoginPage extends AppCompatActivity {
 
     private Button button;
+    private TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,14 @@ public class LoginPage extends AppCompatActivity {
             }
         });
 
+        text = findViewById(R.id.forgottenpassword);
+        text.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                openReset();
+            }
+        });
+
     }
 
     public void openPre_homepage(){
@@ -41,6 +51,11 @@ public class LoginPage extends AppCompatActivity {
 
     public void openRegisterPage(){
         Intent intent = new Intent(this, RegisterPage.class);
+        startActivity(intent);
+    }
+
+    public void openReset(){
+        Intent intent = new Intent(this, Reset.class);
         startActivity(intent);
     }
 }
