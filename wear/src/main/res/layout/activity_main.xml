@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_grey"
     android:padding="@dimen/box_inset_layout_padding"
     tools:context=".MainActivity"
-    tools:deviceIds="wear">
+    tools:deviceIds="wear"
+    android:alpha="0.9"
+    android:background="@drawable/background">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -21,10 +22,7 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="167dp"
-        android:layout_height="83dp" />
+
 
 
 </android.support.wear.widget.BoxInsetLayout>
