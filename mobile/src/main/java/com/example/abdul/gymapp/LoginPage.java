@@ -30,6 +30,7 @@ public class LoginPage extends AppCompatActivity {
     private FirebaseAuth mAuth;
     EditText Email,Password;
 
+    //makes sure to exit app back button must be pressed twice
     @Override
     public void onBackPressed(){
 

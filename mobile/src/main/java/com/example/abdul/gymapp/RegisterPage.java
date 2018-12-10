@@ -55,7 +55,6 @@ public class RegisterPage extends AppCompatActivity {
     }
 
 
-
     //validation for the register page
     private void registeruser() {
         final String name = Name.getText().toString().trim();
@@ -113,6 +112,8 @@ public class RegisterPage extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(String.valueOf(this), "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(RegisterPage.this, "Authentication Unsuccessful",
+                                    Toast.LENGTH_SHORT).show();
                         }
 
                         // ...
@@ -121,6 +122,7 @@ public class RegisterPage extends AppCompatActivity {
     }
     public void openPre_homepage(){
         Intent intent = new Intent(this, Pre_homepage.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 

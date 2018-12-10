@@ -18,9 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Pre_homepage"/>
+        <activity android:name=".Pre_homepage" />
         <activity android:name=".RegisterPage" />
-        <activity android:name=".Reset"></activity>
+        <activity android:name=".Reset" />
+        <activity android:name=".BeginnerPage" />
+        <activity android:name=".IntermediatePage"></activity>
     </application>
 
 </manifest>
