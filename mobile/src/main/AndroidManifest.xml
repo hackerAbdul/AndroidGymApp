@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Pre_homepage" />
+        <activity android:name=".Pre_homepage"/>
         <activity android:name=".RegisterPage" />
         <activity android:name=".Reset"></activity>
     </application>
