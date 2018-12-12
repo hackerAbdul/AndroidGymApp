@@ -123,9 +123,8 @@ public class RegisterPage extends AppCompatActivity {
                             String value = text.getText().toString();
                             Firebase childRef = mRootRef.child(String.valueOf(UserId));
 
-
                             childRef.child("Name").setValue(value);
-
+                            childRef.child("Email").setValue(value);
 
                             openPre_homepage();
                             finish();

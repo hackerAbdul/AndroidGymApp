@@ -33,13 +33,16 @@ public class exercises extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String id = mAuth.getCurrentUser().getUid();
-                Toast.makeText(exercises.this, exercise.getText(),
+                Toast.makeText(exercises.this, "Exercise Saved",
                         Toast.LENGTH_SHORT).show();
                 Firebase childRef = mRootRef.child(String.valueOf(id));
                 childRef.child("exercise").setValue(exercise.getText().toString());
                 childRef.child("sets").setValue(sets.getText().toString());
                 childRef.child("reps").setValue(reps.getText().toString());
+                finish();
             }
         });
+
+
     }
 }

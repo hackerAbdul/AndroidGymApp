@@ -25,6 +25,8 @@ public class BeginnerPage extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer,  toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -36,8 +38,7 @@ public class BeginnerPage extends AppCompatActivity implements NavigationView.On
 
         switch (item.getItemId()){
             case R.id.nav_message:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new MessageFragement()).commit();
+                openexercises();
                 break;
 
             case R.id.nav_pictures:
@@ -76,6 +77,11 @@ public class BeginnerPage extends AppCompatActivity implements NavigationView.On
 
     public void openProfile(){
         Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
+    }
+
+    public void openexercises(){
+        Intent intent = new Intent(this, exercises.class);
         startActivity(intent);
     }
 }
