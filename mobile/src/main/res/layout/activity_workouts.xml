@@ -17,7 +17,6 @@
         android:text="Saved Exercises"
         android:textAlignment="center"
         android:textColor="#f1f1f1"
-        android:textStyle="bold"
         android:textSize="40dp" />
 
     <ListView

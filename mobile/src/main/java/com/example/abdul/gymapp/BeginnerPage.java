@@ -23,6 +23,7 @@ import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
 public class BeginnerPage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawer;
+
     private Button button;
     private FirebaseAuth mAuth;
 
