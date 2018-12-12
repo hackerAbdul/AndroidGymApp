@@ -51,6 +51,7 @@ public class LoginPage extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
 
+
         Email = findViewById(R.id.Email);
         Password = findViewById(R.id.Password);
 
@@ -122,7 +123,7 @@ public class LoginPage extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(String.valueOf(this), "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            openPre_homepage();
+                            opentest();
                             finish();
                         } else {
                             // If sign in fails, display a message to the user.
@@ -140,6 +141,11 @@ public class LoginPage extends AppCompatActivity {
 
     public void openPre_homepage(){
         Intent intent = new Intent(this, Pre_homepage.class);
+        startActivity(intent);
+    }
+
+    public void opentest(){
+        Intent intent = new Intent(this, test.class);
         startActivity(intent);
     }
 
