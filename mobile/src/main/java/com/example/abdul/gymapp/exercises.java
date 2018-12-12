@@ -10,7 +10,7 @@ import android.widget.Toast;
 import com.firebase.client.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class test extends AppCompatActivity {
+public class exercises extends AppCompatActivity {
 
     EditText exercise,sets,reps;
     private Button button;
@@ -20,7 +20,7 @@ public class test extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_exercises);
         mAuth = FirebaseAuth.getInstance();
         mRootRef = new Firebase("https://gymapp-99a58.firebaseio.com/Users");
 
@@ -33,7 +33,7 @@ public class test extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String id = mAuth.getCurrentUser().getUid();
-                Toast.makeText(test.this, exercise.getText(),
+                Toast.makeText(exercises.this, exercise.getText(),
                         Toast.LENGTH_SHORT).show();
                 Firebase childRef = mRootRef.child(String.valueOf(id));
                 childRef.child("exercise").setValue(exercise.getText().toString());

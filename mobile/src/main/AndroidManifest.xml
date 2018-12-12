@@ -24,7 +24,8 @@
         <activity android:name=".Reset" />
         <activity android:name=".BeginnerPage" />
         <activity android:name=".IntermediatePage" />
-        <activity android:name=".test"></activity>
+        <activity android:name=".exercises" />
+        <activity android:name=".Profile"></activity>
     </application>
 
 </manifest>
