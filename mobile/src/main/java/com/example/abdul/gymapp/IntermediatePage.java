@@ -38,8 +38,7 @@ public class IntermediatePage extends AppCompatActivity implements NavigationVie
 
         switch (item.getItemId()){
             case R.id.nav_message:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new MessageFragement()).commit();
+                openexercises();
                 break;
 
             case R.id.nav_pictures:
@@ -78,6 +77,11 @@ public class IntermediatePage extends AppCompatActivity implements NavigationVie
 
     public void openProfile(){
         Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
+    }
+
+    public void openexercises(){
+        Intent intent = new Intent(this, exercises.class);
         startActivity(intent);
     }
 }

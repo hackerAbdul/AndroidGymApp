@@ -120,11 +120,11 @@ public class RegisterPage extends AppCompatActivity {
                             String UserId = mAuth.getUid();
                             Toast.makeText(RegisterPage.this, "Authentication Successful",
                                     Toast.LENGTH_SHORT).show();
-                            String value = text.getText().toString();
+                            String value = Name.getText().toString();
                             Firebase childRef = mRootRef.child(String.valueOf(UserId));
 
                             childRef.child("Name").setValue(value);
-                            childRef.child("Email").setValue(value);
+
 
                             openPre_homepage();
                             finish();

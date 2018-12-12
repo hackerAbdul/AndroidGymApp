@@ -1,5 +1,6 @@
 package com.example.abdul.gymapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,21 +29,44 @@ public class exercises extends AppCompatActivity {
         sets = findViewById(R.id.sets);
         reps = findViewById(R.id.reps);
 
+
         button = findViewById(R.id.submit);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final String Exercise = exercise.getText().toString();
+                final String Sets = sets.getText().toString();
+                final String Reps = reps.getText().toString();
+
+                if (Exercise.isEmpty()){
+                    exercise.setError("Cannot leave empty");
+                    exercise.requestFocus();
+                    return;
+                }
+
+                if (Exercise.isEmpty()){
+                    reps.setError("Cannot leave empty");
+                    reps.requestFocus();
+                    return;
+                }
+
+                if (Sets.isEmpty()){
+                    sets.setError("Cannot leave empty");
+                    sets.requestFocus();
+                    return;
+                }
+
                 String id = mAuth.getCurrentUser().getUid();
                 Toast.makeText(exercises.this, "Exercise Saved",
                         Toast.LENGTH_SHORT).show();
                 Firebase childRef = mRootRef.child(String.valueOf(id));
-                childRef.child("exercise").setValue(exercise.getText().toString());
-                childRef.child("sets").setValue(sets.getText().toString());
-                childRef.child("reps").setValue(reps.getText().toString());
+                childRef.child("exercises").push().setValue(exercise.getText().toString());
+                childRef.child("Sets").push().setValue(sets.getText().toString());
+                childRef.child("Reps").push().setValue(reps.getText().toString());
                 finish();
             }
-        });
 
+        });
 
     }
 }

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class Profile extends AppCompatActivity {
 
@@ -28,6 +29,21 @@ public class Profile extends AppCompatActivity {
                 capture();
             }
         });
+
+        button = findViewById(R.id.save);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBeginnerPage();
+            }
+        });
+    }
+
+    public void openBeginnerPage(){
+        Toast.makeText(this, "Picture Saved",
+                Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, BeginnerPage.class);
+        startActivity(intent);
     }
 
     private void capture() {
