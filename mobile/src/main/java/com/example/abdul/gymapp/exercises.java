@@ -59,10 +59,10 @@ public class exercises extends AppCompatActivity {
                 String id = mAuth.getCurrentUser().getUid();
                 Toast.makeText(exercises.this, "Exercise Saved",
                         Toast.LENGTH_SHORT).show();
-                Firebase childRef = mRootRef.child(String.valueOf(id));
-                childRef.child("exercises").push().setValue(exercise.getText().toString());
-                childRef.child("Sets").push().setValue(sets.getText().toString());
-                childRef.child("Reps").push().setValue(reps.getText().toString());
+                Firebase childRef = mRootRef.child(String.valueOf(id)).child("All Exercises").push();
+                childRef.child("Exercise").setValue(exercise.getText().toString());
+                childRef.child("Sets").setValue(sets.getText().toString());
+                childRef.child("Reps").setValue(reps.getText().toString());
                 finish();
             }
 

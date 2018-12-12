@@ -51,7 +51,7 @@ public class IntermediatePage extends AppCompatActivity implements NavigationVie
                         Toast.LENGTH_LONG).show();
                 break;
 
-            case R.id.nav_send:
+            case R.id.nav_logout:
                 Toast.makeText(this, "Send Exercises",
                         Toast.LENGTH_LONG).show();
                 break;

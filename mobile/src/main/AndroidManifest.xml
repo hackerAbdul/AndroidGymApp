@@ -3,6 +3,7 @@
     package="com.example.abdul.gymapp">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <uses-feature
         android:name="android.hardware.camera2"
         android:required="true" />
@@ -28,7 +29,8 @@
         <activity android:name=".BeginnerPage" />
         <activity android:name=".IntermediatePage" />
         <activity android:name=".exercises" />
-        <activity android:name=".Profile"></activity>
+        <activity android:name=".Profile" />
+        <activity android:name=".workouts"></activity>
     </application>
 
 </manifest>

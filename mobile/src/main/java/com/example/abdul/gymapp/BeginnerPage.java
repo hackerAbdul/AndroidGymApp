@@ -9,20 +9,33 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import android.widget.Toolbar;
+
+import com.google.firebase.auth.FirebaseAuth;
+
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK;
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
+
 
 public class BeginnerPage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawer;
+    private Button button;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beginner_page);
+        mAuth = FirebaseAuth.getInstance();
 
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -31,6 +44,14 @@ public class BeginnerPage extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer,  toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        button = findViewById(R.id.workout);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openWorkouts();
+            }
+        });
     }
 
     @Override
@@ -51,9 +72,8 @@ public class BeginnerPage extends AppCompatActivity implements NavigationView.On
                         Toast.LENGTH_LONG).show();
                 break;
 
-            case R.id.nav_send:
-                Toast.makeText(this, "Send Exercises",
-                        Toast.LENGTH_LONG).show();
+            case R.id.nav_logout:
+                openLogInPage();
                 break;
 
             case R.id.nav_profile:
@@ -82,6 +102,18 @@ public class BeginnerPage extends AppCompatActivity implements NavigationView.On
 
     public void openexercises(){
         Intent intent = new Intent(this, exercises.class);
+        startActivity(intent);
+    }
+
+    public void openLogInPage(){
+        mAuth.signOut();
+        Intent intent = new Intent(this, LoginPage.class);
+        FLAG_ACTIVITY_CLEAR_TOP:
+        startActivity(intent);
+    }
+
+    public void openWorkouts(){
+        Intent intent = new Intent(this, workouts.class);
         startActivity(intent);
     }
 }

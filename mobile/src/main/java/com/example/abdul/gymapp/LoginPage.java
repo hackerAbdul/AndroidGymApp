@@ -30,6 +30,7 @@ public class LoginPage extends AppCompatActivity {
     private FirebaseAuth mAuth;
     EditText Email,Password;
 
+
     //makes sure to exit app back button must be pressed twice
     @Override
     public void onBackPressed(){
@@ -55,14 +56,14 @@ public class LoginPage extends AppCompatActivity {
         Email = findViewById(R.id.Email);
         Password = findViewById(R.id.Password);
 
-
         button = findViewById(R.id.LogInButton);
         button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                loginuser();
-            }
-        });
+                @Override
+                public void onClick(View view) {
+                    loginuser();
+                }
+            });
+
 
         button = findViewById(R.id.register);
         button.setOnClickListener(new View.OnClickListener() {
@@ -87,9 +88,17 @@ public class LoginPage extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
     }
 
-
+    //Checks if a a user is already logged in if not directs them to enter log in details
+    private void updateUI(FirebaseUser currentUser) {
+        if (currentUser!=null){
+            openPre_homepage();
+        }else{
+            loginuser();
+        }
+    }
 
 
     //login authentication for users to access the app
@@ -139,6 +148,7 @@ public class LoginPage extends AppCompatActivity {
     }
 
 
+    //Class referenced
     public void openPre_homepage(){
         Intent intent = new Intent(this, Pre_homepage.class);
         startActivity(intent);
@@ -156,6 +166,11 @@ public class LoginPage extends AppCompatActivity {
 
     public void openReset(){
         Intent intent = new Intent(this, Reset.class);
+        startActivity(intent);
+    }
+
+    public void OpenLogin(){
+        Intent intent = new Intent(this, LoginPage.class);
         startActivity(intent);
     }
 
