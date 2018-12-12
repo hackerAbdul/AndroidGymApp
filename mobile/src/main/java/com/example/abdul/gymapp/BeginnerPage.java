@@ -53,6 +53,14 @@ public class BeginnerPage extends AppCompatActivity implements NavigationView.On
                 openWorkouts();
             }
         });
+
+        button = findViewById(R.id.recorder);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openRecorder();
+            }
+        });
     }
 
     @Override
@@ -96,6 +104,8 @@ public class BeginnerPage extends AppCompatActivity implements NavigationView.On
         }
     }
 
+
+    //Referenced Classes
     public void openProfile(){
         Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
@@ -115,6 +125,11 @@ public class BeginnerPage extends AppCompatActivity implements NavigationView.On
 
     public void openWorkouts(){
         Intent intent = new Intent(this, workouts.class);
+        startActivity(intent);
+    }
+
+    public void openRecorder(){
+        Intent intent = new Intent(this, Recorder.class);
         startActivity(intent);
     }
 }

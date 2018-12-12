@@ -3,6 +3,9 @@
     package="com.example.abdul.gymapp">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
 
     <uses-feature
         android:name="android.hardware.camera2"
@@ -30,7 +33,8 @@
         <activity android:name=".IntermediatePage" />
         <activity android:name=".exercises" />
         <activity android:name=".Profile" />
-        <activity android:name=".workouts"></activity>
+        <activity android:name=".workouts" />
+        <activity android:name=".Recorder"></activity>
     </application>
 
 </manifest>

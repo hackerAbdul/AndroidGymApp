@@ -47,6 +47,14 @@ public class IntermediatePage extends AppCompatActivity implements NavigationVie
                 openWorkouts();
             }
         });
+
+        button = findViewById(R.id.recorder);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openRecorder();
+            }
+        });
     }
 
     @Override
@@ -90,6 +98,7 @@ public class IntermediatePage extends AppCompatActivity implements NavigationVie
         }
     }
 
+    //Referenced Classes
     public void openProfile(){
         Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
@@ -109,6 +118,11 @@ public class IntermediatePage extends AppCompatActivity implements NavigationVie
 
     public void openWorkouts(){
         Intent intent = new Intent(this, workouts.class);
+        startActivity(intent);
+    }
+
+    public void openRecorder(){
+        Intent intent = new Intent(this, Recorder.class);
         startActivity(intent);
     }
 }
