@@ -24,18 +24,6 @@
         android:textColor="#f1f1f1"
         android:textSize="40dp" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="274dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="6dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="0dp" />
-
     <Button
         android:id="@+id/start"
         android:layout_width="101dp"
